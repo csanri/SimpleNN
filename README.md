@@ -16,12 +16,12 @@ A from-scratch implementation of a 2-layer neural network using NumPy for handwr
 ### Forward Pass Equations
 
 **Layer 1 (Input → Hidden):**
-```math
+$$
 \begin{aligned}
 \mathbf{l}_1 &= \mathbf{W}_1 \mathbf{x} + \mathbf{b}_1 \\
 \mathbf{y}_1 &= \text{ReLU}(\mathbf{l}_1)
 \end{aligned}
-```
+$$
 
 **Layer 2 (Hidden → Output):**
 

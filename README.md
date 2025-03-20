@@ -57,6 +57,14 @@ A from-scratch implementation of a 2-layer neural network using NumPy for handwr
 0 & \text{otherwise}
 \end{cases}
 ```
+**Softmax:**
+```math
+For input $\mathbf{z}$ with $C$ classes:
+\[
+\text{softmax}(z_i) = \frac{\exp(z_i)}{\sum_{c=1}^C \exp(z_c)}
+\]
+Our implementation uses $\mathbf{z} = \mathbf{l}_2 - \max(\mathbf{l}_2)$ for numerical stability, computed per sample in the batch dimension.
+```
 
 ## Installation
 

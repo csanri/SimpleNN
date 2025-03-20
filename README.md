@@ -17,16 +17,15 @@ A from-scratch implementation of a 2-layer neural network using NumPy for handwr
 
 **Layer 1 (Input → Hidden):**
 ```math
-\[
 \begin{aligned}
 \mathbf{l}_1 &= \mathbf{W}_1 \mathbf{x} + \mathbf{b}_1 \\
 \mathbf{y}_1 &= \text{ReLU}(\mathbf{l}_1)
 \end{aligned}
-\]
 ```
 
 **Layer 2 (Hidden → Output):**
-\[
+
+```math
 \begin{aligned}
 \mathbf{l}_2 &= \mathbf{W}_2 \mathbf{y}_1 + \mathbf{b}_2 \\
 \mathbf{y}_2 &= \text{softmax}(\mathbf{l}_2)
@@ -36,28 +35,28 @@ A from-scratch implementation of a 2-layer neural network using NumPy for handwr
 ### Backward Pass Equations
 
 **Output Layer Gradients:**
-\[
+```math
 \begin{aligned}
 \frac{\partial \mathcal{L}}{\partial \mathbf{W}_2} &= \frac{1}{m} (\mathbf{y}_2 - \mathbf{y}_{\text{true}}) \mathbf{y}_1^\top \\
 \frac{\partial \mathcal{L}}{\partial \mathbf{b}_2} &= \frac{1}{m} \sum (\mathbf{y}_2 - \mathbf{y}_{\text{true}})
 \end{aligned}
-\]
+```
 
 **Hidden Layer Gradients:**
-\[
+```math
 \begin{aligned}
 \frac{\partial \mathcal{L}}{\partial \mathbf{W}_1} &= \frac{1}{m} \left(\mathbf{W}_2^\top (\mathbf{y}_2 - \mathbf{y}_{\text{true}}) \odot \text{ReLU}'(\mathbf{l}_1)\right) \mathbf{x}^\top \\
 \frac{\partial \mathcal{L}}{\partial \mathbf{b}_1} &= \frac{1}{m} \sum \left(\mathbf{W}_2^\top (\mathbf{y}_2 - \mathbf{y}_{\text{true}}) \odot \text{ReLU}'(\mathbf{l}_1)\right)
 \end{aligned}
-\]
+```
 
 **ReLU Derivative:**
-\[
+```math
 \text{ReLU}'(x) = \begin{cases} 
 1 & \text{if } x > 0 \\
 0 & \text{otherwise}
 \end{cases}
-\]
+```
 
 ## Installation
 
